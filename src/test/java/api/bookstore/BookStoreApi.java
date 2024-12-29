@@ -6,6 +6,7 @@ import models.bookstore.AddBooksRequest;
 import models.bookstore.AddBooksResponse;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.ANY;
 
 public class BookStoreApi extends BaseApi {
 
@@ -26,6 +27,7 @@ public class BookStoreApi extends BaseApi {
     public void deleteAllBooks(String userId) {
         given()
                 .spec(getRequestSpecification())
+                .contentType(ANY)
                 .queryParams("UserId", userId)
                 .when()
                 .delete("/BookStore/v1/Books")
