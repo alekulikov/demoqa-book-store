@@ -31,4 +31,10 @@ public class BaseApi {
                 .expectContentType(JSON)
                 .build();
     }
+
+    public static ResponseSpecification getResponseSpecificationWithoutBody() {
+        return new ResponseSpecBuilder()
+                .log(ALL)
+                .build();
+    }
 }

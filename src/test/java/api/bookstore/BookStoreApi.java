@@ -6,7 +6,6 @@ import models.bookstore.AddBooksRequest;
 import models.bookstore.AddBooksResponse;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.ANY;
 
 public class BookStoreApi extends BaseApi {
 
@@ -31,8 +30,7 @@ public class BookStoreApi extends BaseApi {
                 .when()
                 .delete("/BookStore/v1/Books")
                 .then()
-                .spec(getResponseSpecification())
-                .contentType(ANY)
+                .spec(getResponseSpecificationWithoutBody())
                 .statusCode(204);
     }
 }
