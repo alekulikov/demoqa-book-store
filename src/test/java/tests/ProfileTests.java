@@ -34,6 +34,7 @@ class ProfileTests extends TestBase {
     })
     @DisplayName("Успешное удаление книги из профиля")
     void deleteBookFromProfile(LoginResponse loginResponse) {
+        bookStoreApi.deleteAllBooks(loginResponse.getUserId());
         bookStoreApi.addBooks(new AddBooksRequest(loginResponse.getUserId(),
                 List.of(new Isbn(ISBN))));
         profilePage.openPage()

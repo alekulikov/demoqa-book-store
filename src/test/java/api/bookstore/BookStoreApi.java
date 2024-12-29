@@ -21,4 +21,16 @@ public class BookStoreApi extends BaseApi {
                 .statusCode(201)
                 .extract().as(AddBooksResponse.class);
     }
+
+    @Step("Удалить по API все книги из профиля")
+    public void deleteAllBooks(String userId) {
+        given()
+                .spec(getRequestSpecification())
+                .queryParams("UserId", userId)
+                .when()
+                .delete("/BookStore/v1/Books")
+                .then()
+                .spec(getResponseSpecification())
+                .statusCode(204);
+    }
 }
