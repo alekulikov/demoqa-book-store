@@ -2,7 +2,6 @@ package api.bookstore;
 
 import api.base.BaseApi;
 import io.qameta.allure.Step;
-import io.restassured.http.ContentType;
 import models.bookstore.AddBooksRequest;
 import models.bookstore.AddBooksResponse;
 
