@@ -1,9 +1,9 @@
 package tests;
 
-import api.account.LoginResponse;
-import api.bookstore.AddBooksRequest;
+import models.account.LoginResponse;
+import models.bookstore.AddBooksRequest;
 import api.bookstore.BookStoreApi;
-import api.bookstore.Isbn;
+import models.bookstore.Isbn;
 import helpers.WithLogin;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
@@ -34,11 +34,11 @@ class ProfileTests extends TestBase {
     })
     @DisplayName("Успешное удаление книги из профиля")
     void deleteBookFromProfile(LoginResponse loginResponse) {
-        bookStoreApi.addBook(new AddBooksRequest(loginResponse.getUserId(),
+        bookStoreApi.addBooks(new AddBooksRequest(loginResponse.getUserId(),
                 List.of(new Isbn(ISBN))));
         profilePage.openPage()
                 .removeBanners()
-                .checkAddedBook()
+                .checkBookExistByIsbn(ISBN)
                 .deleteBook()
                 .checkProfileIsEmpty();
     }

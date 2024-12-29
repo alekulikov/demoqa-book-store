@@ -1,4 +1,4 @@
-package api.bookstore;
+package models.bookstore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddBooksResponse {
+public class AddBooksRequest {
 
-    private List<Isbn> books;
+    private String userId;
+    private List<Isbn> collectionOfIsbns;
 }

@@ -1,8 +1,8 @@
 package helpers;
 
 import api.account.AccountApi;
-import api.account.LoginRequest;
-import api.account.LoginResponse;
+import models.account.LoginRequest;
+import models.account.LoginResponse;
 import org.junit.jupiter.api.extension.*;
 import org.openqa.selenium.Cookie;
 

@@ -2,6 +2,8 @@ package api.account;
 
 import api.base.BaseApi;
 import io.qameta.allure.Step;
+import models.account.LoginRequest;
+import models.account.LoginResponse;
 
 import static io.restassured.RestAssured.given;
 

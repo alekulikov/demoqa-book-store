@@ -1,14 +1,15 @@
-package api.account;
+package models.bookstore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginRequest {
+public class AddBooksResponse {
 
-    private String userName;
-    private String password;
+    private List<Isbn> books;
 }

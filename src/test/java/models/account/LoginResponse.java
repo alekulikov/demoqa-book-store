@@ -1,4 +1,4 @@
-package api.account;
+package models.account;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

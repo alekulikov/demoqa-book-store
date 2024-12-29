@@ -1,4 +1,4 @@
-package api.bookstore;
+package models.bookstore;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
