@@ -24,7 +24,7 @@ class TestBase {
         Configuration.browserVersion = System.getProperty("browserVersion", "chrome_126").split("_")[1];
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = System.getProperty("remoteHost");
+        Configuration.remote = System.getProperty("selenoid");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
