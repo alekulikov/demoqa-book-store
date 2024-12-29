@@ -2,6 +2,7 @@ package api.bookstore;
 
 import api.base.BaseApi;
 import io.qameta.allure.Step;
+import io.restassured.http.ContentType;
 import models.bookstore.AddBooksRequest;
 import models.bookstore.AddBooksResponse;
 
@@ -27,12 +28,12 @@ public class BookStoreApi extends BaseApi {
     public void deleteAllBooks(String userId) {
         given()
                 .spec(getRequestSpecification())
-                .contentType(ANY)
                 .queryParams("UserId", userId)
                 .when()
                 .delete("/BookStore/v1/Books")
                 .then()
                 .spec(getResponseSpecification())
+                .contentType(ANY)
                 .statusCode(204);
     }
 }
