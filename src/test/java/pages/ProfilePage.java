@@ -3,7 +3,8 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProfilePage {
@@ -11,7 +12,6 @@ public class ProfilePage {
     SelenideElement tableItem = $(".rt-tbody");
     SelenideElement deleteButton = $("#delete-record-undefined");
     SelenideElement okButton = $("#closeSmallModal-ok");
-
 
     @Step("Открыть профиль")
     public ProfilePage openPage() {
@@ -48,7 +48,7 @@ public class ProfilePage {
 
     @Step("Проверить по isbn, что в корзине содержится книга")
     public ProfilePage checkBookExistByIsbn(String isbn) {
-        tableItem.$("a").shouldHave(href("profile?book=" + isbn));
+        tableItem.$("a[href*='book=" + isbn + "']").shouldBe(visible);
         return this;
     }
 }
