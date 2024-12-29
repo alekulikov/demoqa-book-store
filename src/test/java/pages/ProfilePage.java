@@ -48,7 +48,7 @@ public class ProfilePage {
 
     @Step("Проверить по isbn, что в корзине содержится книга")
     public ProfilePage checkBookExistByIsbn(String isbn) {
-        tableItem.shouldHave(href("profile?book=" + isbn));
+        tableItem.$("a").shouldHave(href("profile?book=" + isbn));
         return this;
     }
 }
